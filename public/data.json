@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Cox's Bazar",
+    "desk": "Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach",
+    "img": "https://i.ibb.co/xjXT6kt/Rectangle-1.png"
+  },
+
+  {
+    "id": 2,
+    "name": "Sreemangal",
+    "desk": "Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach",
+    "img": "https://i.ibb.co/YkjwSJG/Sreemongol.png"
+  },
+
+  {
+    "id": 3,
+    "name": "Sundarbans",
+    "desk": "Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach",
+    "img": "https://i.ibb.co/Sy1TjKB/sundorbon.png"
+  }
+]
