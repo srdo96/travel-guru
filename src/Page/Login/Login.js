@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const handleLogIn=()={
+
+  }
   return (
     <div className="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 ">
       <div className="relative sm:max-w-sm w-full">
@@ -14,7 +17,7 @@ const Login = () => {
           >
             Login
           </label>
-          <form className="mt-5">
+          <form onSubmit={handleLogIn} className="mt-5">
             <div className="mt-7">
               <input
                 type="email"
@@ -59,10 +62,10 @@ const Login = () => {
               <div className="flex justify-center items-center">
                 <label className="mr-2">Don't have an account?</label>
                 <Link
-                  to="/login"
+                  to="/registration"
                   className=" text-blue-500 transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105"
                 >
-                  Create new
+                  Create new.
                 </Link>
               </div>
             </div>
