@@ -10,9 +10,9 @@ const Registration = () => {
         <div className="relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md">
           <label
             for=""
-            className="block mt-2 text-3xl text-gray-700 text-center font-semibold"
+            className="block mt-2 text-2xl text-gray-700 text-center font-semibold"
           >
-            Register
+            Registration
           </label>
           <form className="mt-5">
             <div>
@@ -49,14 +49,14 @@ const Registration = () => {
 
             <div className="mt-7">
               <button className="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                Register
+                Registration
               </button>
             </div>
 
             <div className="flex mt-7 items-center text-center">
               <hr className="border-gray-300 border-1 w-full rounded-md" />
               <label className="block font-medium text-sm text-gray-600 w-full">
-                Register with
+                or
               </label>
               <hr className="border-gray-300 border-1 w-full rounded-md" />
             </div>
