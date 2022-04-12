@@ -8,10 +8,11 @@ import News from "./Page/News/News";
 
 function App() {
   return (
-    <div className="bg-bgimg App">
+    <div className=" App">
       <Header></Header>
-      <Home></Home>
+      {/* <Home></Home> */}
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/login" element={<Login />} />
