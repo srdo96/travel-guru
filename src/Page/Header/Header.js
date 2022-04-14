@@ -6,16 +6,16 @@ const Header = () => {
   return (
     <nav className=" bg-green-600 px-2 sm:px-4 py-2.5 rounded ">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
-        <a href="https://flowbite.com" className="flex items-center">
+        <Link to="/home" className="flex items-center">
           <img src={logo} className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
           <span className="self-center text-xl font-semibold whitespace-nowrap "></span>
-        </a>
+        </Link>
         <div className="flex">
           <div className="relative mr-3 md:mr-0 md:block">
             <input
               type="text"
               id="email-adress-icon"
-              className="block p-2 pl-10 w-full text-gray-900 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 "
+              className="block p-2 pl-10 w-full bg-transparent text-white rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 "
               placeholder="Search..."
             />
           </div>
