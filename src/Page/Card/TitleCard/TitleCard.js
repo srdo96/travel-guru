@@ -1,17 +1,16 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Booking from "../../Booking/Booking";
 
-const TitleCard = ({ info }) => {
-  const { name, desk } = info;
-  const navigate = useNavigate();
+const TitleCard = ({ item, handleBooking }) => {
+  const { name, desc } = item;
+
   return (
     <div>
       <h1 className="text-7xl font-bold">{name}</h1>
-      <p>{desk}</p>
+      <p>{desc}</p>
       <button
-        onClick={() => {
-          navigate("/booking");
-        }}
+        onClick={() => handleBooking()}
         className="bg-yellow-500
       p-2 rounded-lg text-black mt-2"
       >

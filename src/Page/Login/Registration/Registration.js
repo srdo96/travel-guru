@@ -1,35 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  useAuthState,
-  useCreateUserWithEmailAndPassword,
-} from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 const Registration = () => {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [myError, setmyError] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [createUserWithEmailAndPassword] =
+  const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-  const [user, loading, error] = useAuthState(auth);
-
-  const handleSignUpWithEmail = (event) => {
-    console.log(event);
-    event.preventDefault();
-    if (password !== confirmPassword) {
-      setmyError("Confirm password does not match");
-      return;
-    }
-    console.log(email, password);
-    createUserWithEmailAndPassword(email, password).then((result) => {
-      // const user = result.user;
-      console.log(result);
-      console.log("Error: ", error);
-    });
-    // setError("");
-    console.log("click");
+  console.log(email);
+  console.log(password);
+  console.log(confirmPassword);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setEmail(e.target.email.value);
+    setPassword(e.target.password.value);
+    setConfirmPassword(e.target.confirmPassword.value);
+    console.log(email);
+    // setConfirmPassword(e.target.confirmPassword);
   };
   return (
     <div className="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 ">
@@ -38,17 +26,14 @@ const Registration = () => {
         <div className="card bg-red-400 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
         <div className="relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md">
           <label
-            // for=""
+            htmlFor=""
             className="block mt-2 text-2xl text-gray-700 text-center font-semibold"
           >
             Registration
           </label>
-          <form onSubmit={handleSignUpWithEmail} className="mt-5">
+          <form onSubmit={handleSubmit} className="mt-5">
             <div>
               <input
-                onBlur={(e) => {
-                  setName(e.target.value);
-                }}
                 type="text"
                 placeholder="Name"
                 name="name"
@@ -59,9 +44,6 @@ const Registration = () => {
 
             <div className="mt-7">
               <input
-                onBlur={(e) => {
-                  setEmail(e.target.value);
-                }}
                 type="email"
                 placeholder="Email"
                 name="email"
@@ -72,24 +54,20 @@ const Registration = () => {
 
             <div className="mt-7">
               <input
-                onBlur={(e) => {
-                  setPassword(e.target.value);
-                }}
                 type="password"
                 placeholder="Password"
+                name="password"
                 required
                 className="pl-3 mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
               />
             </div>
 
             <div className="mt-7">
-              <p>{error}</p>
+              {/* <p>{error}</p> */}
               <input
-                onBlur={(e) => {
-                  setConfirmPassword(e.target.value);
-                }}
                 type="password"
                 placeholder="Confirm password"
+                name="confirmPassword"
                 required
                 className="pl-3 mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
               />
